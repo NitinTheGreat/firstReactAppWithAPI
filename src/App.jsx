@@ -37,7 +37,7 @@ function App() {
   return (
     <>
       <Navbar />
-      {screenWidth < 400 && (
+      {screenWidth < 300 && (
         <>
           <img src={helloLogo} alt="Hello" /> {/* Use helloLogo */}
           <audio autoPlay>
@@ -45,7 +45,7 @@ function App() {
           </audio>
         </>
       )}
-      {screenWidth >= 400 && screenWidth <= 800 && (
+      {screenWidth >= 300 && screenWidth <= 800 && (
         <div className="container">
           {card.map((item, index) => (
             <div className="card" key={index}>
