@@ -26,21 +26,29 @@ body{
 
   font-family: 'Poppins light', Courier, monospace;
 }
-.card{
-  /* background-color: aquamarine; */
-  /* width: 300px; */
-  /* height: max-content ; */
+
+ .card{
+  
   max-width: 20vw;
   min-width: 20vw;
   max-height: 15vh;
-  overflow-y: scroll;
+  
+  overflow-y: auto;
   margin: 10px;
   padding: 20px;
   border: 1.5px solid #e8cccc;
   border-radius: 20px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   background-color: aliceblue;
+} 
+
+
+.card::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
 }
+
+
 nav {
   display: flex;
   /* justify-content: space-between; */
@@ -78,4 +86,9 @@ nav img{
   height: 50px;
   margin-left: 4rem;
   cursor: pointer;
+}
+.thegreat{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
