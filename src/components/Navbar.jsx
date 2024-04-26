@@ -1,34 +1,31 @@
-import React, { useState } from 'react';
-
-
+import React, { useState, useRef } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import '../Styles/main.css';
 
 const Navbar = () => {
-  const [menuVisible, setMenuVisible] = useState(true); // State to track menu visibility
+  const navRef = useRef();
 
-  const toggleMenu = () => {
-    setMenuVisible(!menuVisible);
+  const showNavbar = () => {
+    navRef.current.classList.toggle('responsive'); // Updated class name
   };
 
   return (
-    <nav>
-      <img src="./ieeecslogo.png" alt="" />
-      {window.innerWidth < 1200 && ( // Check screen resolution
-        <img
-          src="./menu.png"
-          alt="Menu"
-          className="menu-icon"
-          onClick={toggleMenu}
-        />
-      )}
-      <ul className={menuVisible ? 'menu-visible' : 'menu-hidden'}>
-        <li>Home</li>
-        <li>About Us</li>
-        <li>More Facts</li>
-        <li>Donate Us</li>
-      </ul>
-    </nav>
+    <header>
+      <h3><img src="./ieeecslogo.png" alt="" /></h3>
+      <nav ref={navRef}>
+        <a href="/#">Home</a>
+        <a href="/#">About Us</a>
+        <a href="/#">More Facts</a>
+        <a href="/#">Donate Us</a>
+        <button className='nav-btn nav-close-btn' onClick={showNavbar}>
+          <FaTimes />
+        </button>
+      </nav>
+      <button className='nav-btn' onClick={showNavbar}>
+        <FaBars />
+      </button>
+    </header>
   );
-};
+}
 
 export default Navbar;
-
